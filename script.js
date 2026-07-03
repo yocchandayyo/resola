@@ -22,12 +22,9 @@ nav.querySelectorAll("a").forEach((link) =>
 );
 
 // ===== Reveal on scroll =====
-const revealTargets = document.querySelectorAll(
-  ".section__title, .section__lead, .problem__card, .service-card, .reason, .flow__step, .faq__item, .profile__photo, .profile__body, .contact-form, .hero__stats"
-);
+const revealTargets = document.querySelectorAll("[data-reveal]");
 revealTargets.forEach((el, i) => {
-  el.classList.add("reveal");
-  el.style.transitionDelay = `${(i % 4) * 80}ms`;
+  el.style.transitionDelay = `${(i % 4) * 90}ms`;
 });
 const io = new IntersectionObserver(
   (entries) => {
@@ -41,6 +38,21 @@ const io = new IntersectionObserver(
   { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
 );
 revealTargets.forEach((el) => io.observe(el));
+
+// フォールバック: 初期表示時点で画面内にある要素は即座に表示する
+// (IntersectionObserver が動かない環境でも最初の画面が見えるように)
+const revealInView = () => {
+  revealTargets.forEach((el) => {
+    if (el.classList.contains("in")) return;
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight * 0.95) {
+      el.classList.add("in");
+      io.unobserve(el);
+    }
+  });
+};
+revealInView();
+window.addEventListener("load", revealInView);
 
 // ===== Contact form (Formspree) =====
 const form = document.getElementById("contactForm");
@@ -71,12 +83,6 @@ form.addEventListener("submit", async (e) => {
   const btn = form.querySelector("button[type=submit]");
   btn.disabled = true;
   btn.textContent = "送信中…";
-
-  // 送信先URLがまだ未設定（プレースホルダ）の場合はデモ表示
-  if (form.action.includes("REPLACE_WITH_YOUR_ID")) {
-    setTimeout(() => showSuccess("送信ありがとうございます！(※現在はデモ表示です。フォームの送信先URLを設定すると実際にメールが届きます)"), 600);
-    return;
-  }
 
   try {
     const res = await fetch(form.action, {

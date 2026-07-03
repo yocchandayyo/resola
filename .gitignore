@@ -3,3 +3,5 @@ assets/_make_logo_assets.py
 assets/_make_og_image.py
 assets/profile-original.jpg
 assets/resola-logo.jpeg
+assets/_slice_*.py
+assets/icon_set_*.png
