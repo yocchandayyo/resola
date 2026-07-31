@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>そらまち整骨院｜デモページの整骨院</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#3d7a5c; --green-soft:#5f9e7f; --green-pale:#eef5f0;
+  --ink:#333b36; --ink-soft:#6b7570; --beige:#faf7f2; --white:#ffffff;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);background:var(--beige);line-height:1.9;letter-spacing:.02em}
+h1,h2,h3{font-family:'Zen Maru Gothic',sans-serif;line-height:1.5}
+img{max-width:100%;display:block}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* 提案サンプル表示 */
+.sample-note{position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(51,59,54,.92);color:#fff;
+  font-size:11px;text-align:center;padding:6px 12px;letter-spacing:.05em}
+.sample-note a{color:#a8d8bf;text-decoration:none}
+
+/* ヘッダー */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid #e8e3da}
+.header-in{max-width:960px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Zen Maru Gothic',sans-serif;font-weight:900;font-size:18px;color:var(--green)}
+.logo small{display:block;font-size:10px;font-weight:500;color:var(--ink-soft);letter-spacing:.15em}
+.header-cta{background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:13px;
+  padding:9px 18px;border-radius:999px;transition:.2s}
+.header-cta:hover{background:var(--green-soft)}
+
+/* ヒーロー */
+.hero{position:relative;overflow:hidden}
+.hero-bg{width:100%;height:72vh;min-height:420px;max-height:640px;object-fit:cover;filter:brightness(.95)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(250,247,242,.94) 0%,rgba(250,247,242,.75) 42%,rgba(250,247,242,.05) 75%)}
+.hero-text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;max-width:960px;
+  margin:0 auto;padding:0 24px}
+.hero-text .tag{display:inline-block;background:var(--green);color:#fff;font-size:12px;font-weight:700;
+  padding:4px 14px;border-radius:999px;width:fit-content;letter-spacing:.1em;margin-bottom:16px}
+.hero-text h1{font-size:clamp(26px,5vw,42px);font-weight:900;color:var(--ink)}
+.hero-text h1 .accent{color:var(--green)}
+.hero-text p{margin-top:14px;font-size:clamp(14px,2vw,16px);color:var(--ink-soft);max-width:30em;font-weight:500}
+.hero-badges{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.hero-badges span{background:#fff;border:1.5px solid var(--green-soft);color:var(--green);font-size:12px;
+  font-weight:700;padding:6px 14px;border-radius:999px}
+
+/* セクション共通 */
+section{padding:72px 0}
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head .en{color:var(--green-soft);font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase}
+.sec-head h2{font-size:clamp(22px,3.6vw,30px);font-weight:900;margin-top:6px}
+
+/* お悩み */
+.pains{background:var(--white)}
+.pain-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.pain-list li{list-style:none;background:var(--green-pale);border-radius:var(--radius);padding:18px 20px;
+  font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:12px}
+.pain-list li::before{content:"✓";flex:none;width:26px;height:26px;border-radius:50%;background:var(--green);
+  color:#fff;display:grid;place-items:center;font-size:13px}
+.pain-close{text-align:center;margin-top:34px;font-size:clamp(16px,2.6vw,20px);font-weight:900;
+  font-family:'Zen Maru Gothic',sans-serif}
+.pain-close .accent{color:var(--green);border-bottom:3px solid #cfe6d9}
+
+/* 特徴 */
+.features .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 24px rgba(61,122,92,.08)}
+.card img{height:190px;width:100%;object-fit:cover}
+.card .body{padding:22px 24px 26px}
+.card .num{color:var(--green-soft);font-size:12px;font-weight:700;letter-spacing:.2em}
+.card h3{font-size:18px;font-weight:900;margin:4px 0 10px}
+.card p{font-size:14px;color:var(--ink-soft)}
+
+/* メニュー */
+.menu{background:var(--white)}
+.menu-table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--radius);overflow:hidden;
+  box-shadow:0 6px 24px rgba(61,122,92,.08)}
+.menu-table th,.menu-table td{padding:16px 20px;text-align:left;font-size:14.5px;border-bottom:1px solid #efece6}
+.menu-table th{font-weight:700}
+.menu-table td:last-child{text-align:right;font-weight:700;color:var(--green);white-space:nowrap}
+.menu-note{font-size:12px;color:var(--ink-soft);margin-top:12px}
+
+/* 院情報 */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.info-grid img{border-radius:var(--radius);height:100%;object-fit:cover;box-shadow:0 6px 24px rgba(61,122,92,.1)}
+.info-table{width:100%;border-collapse:collapse}
+.info-table th,.info-table td{padding:13px 6px;font-size:14.5px;border-bottom:1px solid #e5e0d7;
+  text-align:left;vertical-align:top}
+.info-table th{width:7em;color:var(--green);font-weight:700;white-space:nowrap}
+@media(max-width:700px){.info-grid{grid-template-columns:1fr}}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--green) 0%,#2e6249 100%);color:#fff;text-align:center}
+.cta h2{font-size:clamp(22px,3.6vw,30px);font-weight:900}
+.cta p{margin-top:12px;font-size:14.5px;opacity:.92}
+.cta-btns{display:flex;gap:16px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+.cta-btns a{text-decoration:none;font-weight:900;font-family:'Zen Maru Gothic',sans-serif;font-size:16px;
+  padding:16px 38px;border-radius:999px;transition:.2s}
+.btn-tel{background:#fff;color:var(--green)}
+.btn-tel small{display:block;font-size:11px;font-weight:500}
+.btn-line{background:#06c755;color:#fff}
+.cta-btns a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.18)}
+
+footer{background:var(--ink);color:#cdd4cf;text-align:center;padding:28px 20px 46px;font-size:12px}
+footer .name{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:15px;color:#fff}
+
+/* ふわっと表示 */
+.fade{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.fade.show{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-in">
+    <div class="logo">そらまち整骨院<small>SORAMACHI SEIKOTSUIN (DEMO)</small></div>
+    <a class="header-cta" href="#contact">ご予約・お問い合わせ</a>
+  </div>
+</header>
+
+<div class="hero">
+  <img class="hero-bg" src="assets/hero_room.png" alt="">
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <span class="tag">デモページの整骨院</span>
+    <h1>つらい痛みの「原因」から、<br><span class="accent">しっかり向き合う整骨院</span></h1>
+    <p>肩こり・腰痛からスポーツのケガまで。国家資格者が一人ひとりの体に合わせて、丁寧に施術します。※これは制作イメージをご覧いただくための架空の院のデモページです。</p>
+    <div class="hero-badges"><span>国家資格者が施術</span><span>予約優先制</span><span>駅から徒歩3分</span></div>
+  </div>
+</div>
+
+<section class="pains">
+  <div class="wrap">
+    <div class="sec-head fade"><span class="en">Trouble</span><h2>こんなお悩みありませんか?</h2></div>
+    <ul class="pain-list fade">
+      <li>慢性的な肩こり・腰痛がつらい</li>
+      <li>マッサージに行ってもすぐ戻ってしまう</li>
+      <li>スポーツのケガを早く治して復帰したい</li>
+      <li>産後の骨盤まわりが気になる</li>
+    </ul>
+    <p class="pain-close fade">そのお悩み、<span class="accent">そらまち整骨院</span>にご相談ください</p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+    <div class="sec-head fade"><span class="en">Feature</span><h2>当院が選ばれる理由</h2></div>
+    <div class="cards">
+      <div class="card fade">
+        <img src="assets/hands_treatment.png" alt="">
+        <div class="body"><span class="num">REASON 01</span><h3>原因を探る丁寧なカウンセリング</h3><p>痛む場所だけでなく、姿勢や生活習慣までお聞きして原因を探ります。初回はお時間を多めにいただき、施術方針をご説明してから始めます。</p></div>
+      </div>
+      <div class="card fade">
+        <img src="assets/stretch_care.png" alt="">
+        <div class="body"><span class="num">REASON 02</span><h3>一人ひとりに合わせた施術</h3><p>手技を中心に、症状と体の状態に合わせて施術を組み立てます。「強く揉むだけ」ではない、体の使い方まで含めたケアを行います。</p></div>
+      </div>
+      <div class="card fade">
+        <img src="assets/reception.png" alt="">
+        <div class="body"><span class="num">REASON 03</span><h3>通いやすい院づくり</h3><p>予約優先制で待ち時間を短く。お仕事帰りにも通いやすい診療時間で、無理なく続けられる通院計画をご提案します。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu">
+  <div class="wrap">
+    <div class="sec-head fade"><span class="en">Menu</span><h2>施術メニュー・料金</h2></div>
+    <table class="menu-table fade">
+      <tbody>
+        <tr><th>保険施術(骨折・捻挫・打撲など)</th><td>窓口負担 数百円〜</td></tr>
+        <tr><th>全身調整コース(約40分)</th><td>4,500円</td></tr>
+        <tr><th>骨盤矯正</th><td>3,800円</td></tr>
+        <tr><th>スポーツケア・テーピング</th><td>1,000円〜</td></tr>
+      </tbody>
+    </table>
+    <p class="menu-note fade">※ デモ用のサンプル料金です。実際の院のメニュー・料金に合わせて制作します。</p>
+  </div>
+</section>
+
+<section class="clinic-info">
+  <div class="wrap">
+    <div class="sec-head fade"><span class="en">Information</span><h2>院のご案内</h2></div>
+    <div class="info-grid fade">
+      <img src="assets/reception.png" alt="">
+      <table class="info-table">
+        <tr><th>院名</th><td>そらまち整骨院</td></tr>
+        <tr><th>所在地</th><td>東京都◯◯区◯◯ 1-2-3(架空の住所です)</td></tr>
+        <tr><th>営業時間</th><td>平日 9:00〜19:30 / 土曜 9:00〜17:00</td></tr>
+        <tr><th>定休日</th><td>日曜・祝日</td></tr>
+        <tr><th>ご予約</th><td>お電話・LINEでの予約優先</td></tr>
+        
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>ご予約・お問い合わせ</h2>
+    <p>実際の制作では、お電話・LINE・予約システムなど院に合わせた導線を設置します。</p>
+    <div class="cta-btns">
+      <a class="btn-tel" href="#">📞 00-0000-0000<small>デモのため発信できません</small></a>
+      <a class="btn-line" href="#">LINEで予約する(デモ)</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="name">そらまち整骨院</div>
+  <p>東京都◯◯区◯◯ 1-2-3(架空の住所です)</p>
+</footer>
+
+<div class="sample-note">これは ReSola Creative が制作した架空の整骨院のデモページです（実在の院ではありません）</div>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
