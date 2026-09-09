@@ -70,7 +70,7 @@ function showSuccess(message) {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   let valid = true;
-  ["name", "email", "message"].forEach((id) => {
+  ["name", "email"].forEach((id) => {
     const input = document.getElementById(id);
     const field = input.closest(".field");
     const empty = !input.value.trim();
