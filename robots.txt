@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yocchandayyo.github.io/resola/sitemap.xml

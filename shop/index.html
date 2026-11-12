@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>前橋・高崎のお店のホームページ制作｜3万円から｜ReSola Creative</title>
+  <meta name="description" content="前橋・高崎のお店のホームページを3万円から作ります。文章も画像もこちらで用意し、スマホで見やすい1ページを公開までお手伝いします。前橋在住なので、お店まで伺えます。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yocchandayyo.github.io/resola/shop/" />
+  <meta property="og:title" content="前橋・高崎のお店のホームページ制作｜3万円から" />
+  <meta property="og:description" content="文章も画像もこちらで用意します。スマホで見やすい1ページを、公開までお手伝いします。前橋在住なので、お店まで伺えます。" />
+  <meta property="og:image" content="https://yocchandayyo.github.io/resola/assets/og-image.png" />
+  <meta property="og:site_name" content="ReSola Creative" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://yocchandayyo.github.io/resola/shop/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Shippori+Mincho+B1:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Inter:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="../assets/favicon.png" />
+  <link rel="stylesheet" href="../styles.css?v=20261112" />
+  <style>
+    /* お店向けページだけの調整。色・書体・部品は本体の styles.css をそのまま使う */
+    .shop-hero { min-height: auto; }
+    .shop-hero .hero__inner { padding: 140px 0 80px; }
+    .shop-hero__grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+    .shop-hero__title { font-family: var(--f-display); font-weight: 400; color: #fff; letter-spacing: 0.03em;
+      font-size: clamp(1.9rem, 4.4vw, 3.3rem); line-height: 1.36; margin-bottom: 26px; }
+    .shop-hero__title em { color: var(--sora); }
+    .shop-hero__price { display: inline-flex; align-items: baseline; gap: 8px; margin-bottom: 30px;
+      border: 1px solid rgba(56, 189, 248, 0.45); background: rgba(56, 189, 248, 0.1);
+      border-radius: 999px; padding: 8px 24px; color: #fff; font-weight: 700; }
+    .shop-hero__price b { font-family: var(--f-ui); font-weight: 800; font-size: 1.9rem; line-height: 1; }
+    .shop-hero__price small { font-size: 0.82rem; color: var(--on-dark-muted); font-weight: 500; }
+    .phone { justify-self: center; width: min(250px, 66vw); border-radius: 36px; padding: 10px;
+      background: #0f3248; border: 1px solid rgba(125, 215, 252, 0.35);
+      box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.7), 0 0 60px -20px rgba(56, 189, 248, 0.5); }
+    .phone img { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; object-position: top; border-radius: 27px; }
+    .phone__cap { text-align: center; color: var(--on-dark-muted); font-size: 0.78rem; margin-top: 14px; }
+
+    .fit__list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 34px; }
+    .fit__list li { position: relative; background: var(--shiro); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 20px 24px 20px 50px; font-weight: 700; font-size: 0.98rem; box-shadow: var(--shadow-soft); }
+    .fit__list li::before { content: ""; position: absolute; left: 24px; top: 1.75em; width: 10px; height: 10px;
+      border-radius: 3px; background: var(--grad); }
+
+    .incl__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 8px; }
+    .incl { background: var(--shiro); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 26px 24px; box-shadow: var(--shadow-soft); }
+    .incl h3 { font-size: 1.06rem; font-weight: 900; margin-bottom: 8px; }
+    .incl p { color: var(--muted); font-size: 0.9rem; }
+
+    .price-box { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; align-items: stretch; margin-top: 8px; }
+    .price-main { background: radial-gradient(80% 50% at 80% 0%, rgba(56, 189, 248, 0.25) 0%, rgba(56, 189, 248, 0) 60%), var(--ink);
+      color: #fff; border-radius: var(--radius-lg); padding: 38px 36px; border: 1px solid rgba(56, 189, 248, 0.45); }
+    .price-main__name { font-weight: 900; letter-spacing: 0.04em; }
+    .price-main__num { font-family: var(--f-ui); font-weight: 800; font-size: 4rem; line-height: 1.1; margin: 10px 0 2px; }
+    .price-main__num span { font-family: var(--f-body); font-size: 1rem; font-weight: 700; color: var(--on-dark-muted); margin-left: 8px; }
+    .price-main__desc { color: var(--on-dark-muted); font-size: 0.9rem; margin-top: 12px; }
+    .price-sub { background: var(--shiro); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px 34px; box-shadow: var(--shadow-soft); }
+    .price-sub h3 { font-size: 1.02rem; font-weight: 900; margin-bottom: 14px; }
+    .price-sub dl { display: grid; grid-template-columns: 1fr auto; gap: 10px 20px; font-size: 0.93rem; }
+    .price-sub dt { color: var(--ink); }
+    .price-sub dd { font-weight: 700; color: var(--ao); text-align: right; white-space: nowrap; }
+    .price-sub p { color: var(--muted-2); font-size: 0.84rem; margin-top: 18px; }
+
+    .me { display: grid; grid-template-columns: 220px 1fr; gap: 44px; align-items: center; }
+    .me__photo { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4 / 5; box-shadow: var(--shadow); }
+    .me__photo img { width: 100%; height: 100%; object-fit: cover; }
+    .me p { color: var(--muted); font-size: 0.95rem; margin-bottom: 14px; }
+    .me__name { font-family: var(--f-quiet); font-size: 1.3rem; font-weight: 700; color: var(--ink) !important; }
+    .me__name span { font-family: var(--f-body); font-size: 0.86rem; font-weight: 500; color: var(--muted); }
+
+    .bg-kasumi { background: var(--kasumi); }
+    .bg-shiro { background: var(--shiro); }
+
+    @media (max-width: 900px) {
+      .shop-hero__grid, .price-box, .me { grid-template-columns: 1fr; gap: 34px; }
+      .incl__grid { grid-template-columns: 1fr; }
+      .me__photo { max-width: 220px; }
+    }
+    @media (max-width: 720px) {
+      .shop-hero .hero__inner { padding: 120px 0 64px; }
+      .fit__list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="shop">
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="../" class="logo">
+        <img class="logo__img" src="../assets/logo-mark.png" alt="ReSola ロゴマーク" />
+        <span class="logo__text">りそらクリエイティヴ</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#include">含まれるもの</a>
+        <a href="#sample">制作見本</a>
+        <a href="#price">料金</a>
+        <a href="#flow">流れ</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#contact" class="nav__cta">相談する</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero shop-hero" id="hero">
+    <div class="hero__sky" aria-hidden="true">
+      <span class="px" style="--x:8%;  --y:82%; --s:10px; --t:17s; --d:0s;"></span>
+      <span class="px" style="--x:46%; --y:90%; --s:14px; --t:20s; --d:2.4s;"></span>
+      <span class="px" style="--x:90%; --y:78%; --s:9px;  --t:15s; --d:4.2s;"></span>
+    </div>
+    <div class="container hero__inner">
+      <div class="shop-hero__grid">
+        <div>
+          <p class="hero__eyebrow" data-reveal><span class="sq" aria-hidden="true"></span>お店のホームページ制作 — ReSola Creative</p>
+          <h1 class="shop-hero__title">
+            <span class="nw">前橋・高崎の</span><span class="nw">お店のホームページ、</span><br />
+            <span class="nw"><em>3万円</em>から作ります。</span>
+          </h1>
+          <p class="hero__lead" data-reveal>
+            文章も画像も、こちらで用意します。スマホで見やすい1ページを作り、公開までお手伝いします。前橋に住んでいるので、お店まで伺えます。
+          </p>
+          <div class="hero__actions" data-reveal>
+            <a href="#contact" class="btn btn--primary">無料で相談する</a>
+            <a href="#sample" class="btn btn--ghost">制作見本を見る</a>
+          </div>
+          <p class="hero__note" data-reveal>相談と試作の確認は無料 ／ 文章の用意は不要 ／ 押し売りはしません</p>
+        </div>
+        <div data-reveal>
+          <div class="phone"><img src="../assets/works/seikotsu_mobile.jpg" alt="スマホで見た制作見本の画面" width="390" height="844" /></div>
+          <p class="phone__cap">制作見本（架空の整骨院）をスマホで見た画面</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== こんなお店に ===== -->
+  <section class="section bg-kasumi" id="fit">
+    <div class="container">
+      <p class="label" data-reveal><span class="sq" aria-hidden="true"></span>こんなお店に</p>
+      <h2 class="section__title" data-reveal>Instagramはあるけれど、ホームページはまだ。</h2>
+      <ul class="fit__list">
+        <li data-reveal>予約や問い合わせの入口が、InstagramのDMとホットペッパーだけになっている</li>
+        <li data-reveal>メニューや料金、場所を聞かれるたびに、同じ説明を返している</li>
+        <li data-reveal>昔作ったホームページが、スマホで見づらいままになっている</li>
+        <li data-reveal>作りたい気持ちはあるが、文章を考える時間がない</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== 含まれるもの ===== -->
+  <section class="section bg-shiro" id="include">
+    <div class="container">
+      <p class="label" data-reveal><span class="sq" aria-hidden="true"></span>含まれるもの</p>
+      <h2 class="section__title" data-reveal>3万円に入っているもの。</h2>
+      <p class="section__lead" data-reveal>お店のことを伺って、あとはこちらで形にします。原稿をご用意いただく必要はありません。</p>
+      <div class="incl__grid">
+        <div class="incl" data-reveal><h3>1ページのホームページ</h3><p>お店の紹介、メニューと料金、場所、予約や問い合わせの入口までを、1ページにまとめます。</p></div>
+        <div class="incl" data-reveal><h3>スマホで見やすい作り</h3><p>お客様のほとんどはスマホで見ます。スマホの画面を基準に作り、パソコンでもきれいに見えるようにします。</p></div>
+        <div class="incl" data-reveal><h3>文章の作成</h3><p>お話を伺った内容から、こちらで文章を書きます。確認して、直したい所を言っていただくだけです。</p></div>
+        <div class="incl" data-reveal><h3>画像の用意</h3><p>お店の写真があればそれを使います。足りない分は、雰囲気に合う画像をこちらで用意します。</p></div>
+        <div class="incl" data-reveal><h3>問い合わせフォーム</h3><p>お客様が入力した内容が、お店のメールに届くフォームを付けます。</p></div>
+        <div class="incl" data-reveal><h3>公開と修正2回</h3><p>インターネットに公開する作業まで行います。公開の前に、2回まで修正を承ります。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 制作見本 ===== -->
+  <section class="section bg-kasumi" id="sample">
+    <div class="container">
+      <p class="label" data-reveal><span class="sq" aria-hidden="true"></span>制作見本</p>
+      <h2 class="section__title" data-reveal>実物をご覧ください。</h2>
+      <p class="section__lead" data-reveal>どちらも、企画から文章、デザイン、公開まで自分で手がけたものです。</p>
+      <div class="works__grid" style="grid-template-columns: repeat(2, 1fr);">
+        <article class="work" data-reveal>
+          <a class="work__shot" href="../demo/seikotsuin/" target="_blank" rel="noopener">
+            <img src="../assets/works/seikotsu.jpg" alt="整骨院向けホームページの制作見本の画面" width="960" height="600" loading="lazy" decoding="async" />
+          </a>
+          <p class="work__kind">お店のホームページ（制作見本）</p>
+          <h3>整骨院のホームページ</h3>
+          <p>架空の院を想定して作った見本です。美容室や飲食店、工務店でも、業種に合わせて色や見せ方を変えられます。</p>
+          <a class="work__link" href="../demo/seikotsuin/" target="_blank" rel="noopener">見本を見る</a>
+        </article>
+        <article class="work" data-reveal>
+          <a class="work__shot" href="https://shingeki-gunma.com" target="_blank" rel="noopener">
+            <img src="../assets/works/gunma.jpg" alt="進撃のグンマー 公式サイトの画面" width="960" height="600" loading="lazy" decoding="async" />
+          </a>
+          <p class="work__kind">メディアサイト（運営中）</p>
+          <h3>進撃のグンマー</h3>
+          <p>群馬への移住と住まいを案内する、自分で運営しているサイトです。ページ数の多いサイトもお作りできます。</p>
+          <a class="work__link" href="https://shingeki-gunma.com" target="_blank" rel="noopener">サイトを見る</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 料金 ===== -->
+  <section class="section bg-shiro" id="price">
+    <div class="container">
+      <p class="label" data-reveal><span class="sq" aria-hidden="true"></span>料金</p>
+      <h2 class="section__title" data-reveal>料金はこれだけです。</h2>
+      <div class="price-box">
+        <div class="price-main" data-reveal>
+          <p class="price-main__name">ホームページ制作（1ページ）</p>
+          <p class="price-main__num">3<span>万円（税別）</span></p>
+          <p class="price-main__desc">文章の作成、画像の用意、問い合わせフォーム、公開作業、修正2回までを含みます。お支払いは銀行振込です。</p>
+        </div>
+        <div class="price-sub" data-reveal>
+          <h3>必要な場合だけかかるもの</h3>
+          <dl>
+            <dt>ページの追加（1ページ）</dt><dd>1万円</dd>
+            <dt>独自ドメインの設定（お店の名前.com など）</dt><dd>5,000円</dd>
+            <dt>ドメインの維持費（ドメイン会社へ直接）</dt><dd>年1,500円ほど</dd>
+            <dt>公開後の更新をまかせる</dt><dd>内容に応じてお見積り</dd>
+          </dl>
+          <p>※ 金額は税別です。サーバー代はかからない方法で公開するので、独自ドメインを使わなければ維持費は0円です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 流れ ===== -->
+  <section class="section bg-kasumi" id="flow">
+    <div class="container">
+      <p class="label" data-reveal><span class="sq" aria-hidden="true"></span>流れ</p>
+      <h2 class="section__title" data-reveal>ご相談から公開まで。</h2>
+      <ol class="flow__list">
+        <li class="flow__step" data-reveal>
+          <div class="flow__step-no">STEP 1</div>
+          <h3>ご相談（無料）</h3>
+          <p>フォームかお電話でご連絡ください。お店に伺うか、オンラインでお話しします。</p>
+        </li>
+        <li class="flow__step" data-reveal>
+          <div class="flow__step-no">STEP 2</div>
+          <h3>試作をお見せします</h3>
+          <p>伺った内容から試作を作ります。見て合わなければ、ここでやめていただいて構いません。</p>
+        </li>
+        <li class="flow__step" data-reveal>
+          <div class="flow__step-no">STEP 3</div>
+          <h3>修正して仕上げ</h3>
+          <p>直したい所を伺って仕上げます。修正は2回まで料金に含まれます。</p>
+        </li>
+        <li class="flow__step" data-reveal>
+          <div class="flow__step-no">STEP 4</div>
+          <h3>公開</h3>
+          <p>公開の作業と表示の確認まで行います。ご相談から公開まで、1〜2週間が目安です。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== 作る人 ===== -->
+  <section class="section bg-shiro" id="me">
+    <div class="container me">
+      <div class="me__photo" data-reveal><img src="../assets/profile.jpg" alt="りそらクリエイティヴ 代表 松本 吉生" loading="lazy" decoding="async" /></div>
+      <div>
+        <p class="label" data-reveal><span class="sq" aria-hidden="true"></span>作る人</p>
+        <p class="me__name" data-reveal>松本 吉生<span> / りそらクリエイティヴ 代表</span></p>
+        <p data-reveal>岡山県の出身で、いまは前橋市に住んでいます。自動車整備士、不動産の飛び込み営業、マンションの仕入営業を経て、生成AIを使ったWeb制作の仕事で独立しました。</p>
+        <p data-reveal>営業をしていたので、お客様がどこを見て、何で迷うのかを考えながら文章を書きます。作って終わりにせず、公開したあとの相談にも乗ります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <p class="label" data-reveal><span class="sq" aria-hidden="true"></span>よくある質問</p>
+      <h2 class="section__title" data-reveal>よくある質問</h2>
+      <div class="faq__list">
+        <details class="faq__item" data-reveal>
+          <summary>写真や文章が何もなくても頼めますか?</summary>
+          <p>大丈夫です。お話を伺って文章はこちらで書きます。写真が足りない分は、雰囲気に合う画像をこちらで用意します。お店の写真を撮っていただければ、それを使います。</p>
+        </details>
+        <details class="faq__item" data-reveal>
+          <summary>公開したあと、毎月の費用はかかりますか?</summary>
+          <p>サーバー代のかからない方法で公開するので、基本は0円です。お店の名前の入ったアドレス（独自ドメイン）を使う場合だけ、年1,500円ほどがドメイン会社にかかります。</p>
+        </details>
+        <details class="faq__item" data-reveal>
+          <summary>公開したあとの更新はどうなりますか?</summary>
+          <p>料金の変更や営業時間の修正など、小さな直しはその都度ご相談ください。毎月の更新をまとめてまかせたい場合は、内容を伺ってお見積りします。</p>
+        </details>
+        <details class="faq__item" data-reveal>
+          <summary>予約サイトやInstagramとつなげられますか?</summary>
+          <p>できます。ホットペッパーなどの予約ページ、Instagram、LINEへのボタンを、見やすい位置に置きます。</p>
+        </details>
+        <details class="faq__item" data-reveal>
+          <summary>試作を見て、やめることはできますか?</summary>
+          <p>できます。試作を見て合わないと感じたら、そこでやめていただいて構いません。費用はかかりません。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="section contact" id="contact">
+    <div class="contact__sky" aria-hidden="true">
+      <span class="px" style="--x:10%; --y:80%; --s:10px; --t:17s; --d:0.5s;"></span>
+      <span class="px" style="--x:88%; --y:74%; --s:13px; --t:20s; --d:3s;"></span>
+    </div>
+    <div class="container contact__inner">
+      <img class="contact__plane" src="../assets/contact_plane.png" alt="" loading="lazy" decoding="async" data-reveal />
+      <p class="label label--dark label--center" data-reveal><span class="sq" aria-hidden="true"></span>ご相談</p>
+      <h2 class="contact__title" data-reveal>まずは、気軽にご連絡ください。</h2>
+      <p class="contact__lead" data-reveal>
+        お名前とメールアドレスだけで送れます。<br />
+        ご相談いただいたからといって、こちらから何度も連絡することはありません。
+      </p>
+
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpqgljgd" method="POST" novalidate data-reveal>
+        <input type="hidden" name="_subject" value="【りそらクリエイティヴHP・お店向けページ】新しいお問い合わせ" />
+        <input type="hidden" name="category" id="category" value="お店のホームページ制作（お店向けページから）" />
+        <div class="field">
+          <label for="name">お名前 <span class="req">必須</span></label>
+          <input type="text" id="name" name="name" placeholder="山田 太郎" required />
+        </div>
+        <div class="field">
+          <label for="email">メールアドレス <span class="req">必須</span></label>
+          <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+        </div>
+        <div class="field">
+          <label for="shop">お店の名前 <span class="opt">任意</span></label>
+          <input type="text" id="shop" name="shop" placeholder="〇〇美容室" />
+        </div>
+        <div class="field">
+          <label for="message">ご相談の内容 <span class="opt">任意</span></label>
+          <textarea id="message" name="message" rows="4" placeholder="お店のInstagramのアカウント名や、載せたい内容などがあればご記入ください（空欄でも構いません）"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--block">無料で相談する</button>
+        <p class="contact-form__note">※ いただいた内容は松本宛のメールに届きます。通常2営業日以内にご返信します。ご記入いただいた個人情報は、お問い合わせ対応の目的にのみ使用します。</p>
+      </form>
+
+      <div class="contact__alt" data-reveal>
+        <p>メール・お電話でのご相談はこちら</p>
+        <a href="mailto:dk.jbd.10112@gmail.com" class="contact__mail">dk.jbd.10112@gmail.com</a>
+        <a href="tel:07084430547" class="contact__tel">📞 070-8443-0547</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img class="logo__img" src="../assets/logo-mark.png" alt="ReSola ロゴマーク" />
+        <span class="logo__text">りそらクリエイティヴ</span>
+      </div>
+      <nav class="footer__nav">
+        <a href="../">トップページ</a>
+        <a href="../#works">制作実績</a>
+        <a href="../#profile">プロフィール</a>
+        <a href="../#privacy">プライバシーポリシー</a>
+      </nav>
+      <p class="footer__copy">© <span id="year"></span> りそらクリエイティヴ All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
